@@ -272,7 +272,7 @@ void get_frame (int nlhs, mxArray *plhs[])
             int finger_fields = sizeof (finger_field_names) / sizeof (*finger_field_names);
             Leap::FingerList fingers = f.hands[i].fingers();
             mxArray *f = mxCreateStructMatrix (1, 5, finger_fields, finger_field_names);
-            mxSetFieldByNumber (p, 0, 21, f);
+            mxSetFieldByNumber (p, i, 21, f);
 
             int finger_index = 0;
             for (Leap::FingerList::const_iterator fl = fingers.begin(); fl != fingers.end(); fl++)
